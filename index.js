@@ -22,9 +22,9 @@ const port = 9000;
   app.get('/', (req, res) => {
     res.status(201).json("Home GET Request");
 });
+ 
 
-
-/** api routes */
+/** api routes start here */
  app.use('/api', router)
 
 connect().then(() => {
