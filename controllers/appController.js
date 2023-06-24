@@ -192,19 +192,22 @@ export async function updateUser(req, res) {
 
             const body = req.body;
            console.log(body,"getting the request from the body")
-           
+
             // update the data
             UserModel.updateOne({ _id: userId }, body, function (err, data) {
+                
                 if (err) throw err;
 
                 return res.status(201).send({ msg: "Record Updated...!" });
             })
 
         } else {
+
             return res.status(401).send({ error: "User Not Found...!" });
         }
 
     } catch (error) {
+
         return res.status(401).send({ error });
     }
 }
