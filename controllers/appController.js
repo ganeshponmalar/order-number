@@ -180,14 +180,19 @@ body: {
 }
 */
 export async function updateUser(req, res) {
+
+    console.log(req.body)
+
     try {
 
         // const id = req.query.id;
         const { userId } = req.user;
 
         if (userId) {
-            const body = req.body;
 
+            const body = req.body;
+           console.log(body,"getting the request from the body")
+           
             // update the data
             UserModel.updateOne({ _id: userId }, body, function (err, data) {
                 if (err) throw err;
